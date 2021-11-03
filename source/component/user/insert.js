@@ -1,7 +1,6 @@
 import { Container, Header, Left, Body, Title, Content, Form, Item, Label, Input, Button } from 'native-base'
 import React, { useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import FontAwesome from 'react-native-vector-icons/FontAwesome5'
 
 const Insert = ({ navigation }) => {
@@ -16,7 +15,7 @@ const Insert = ({ navigation }) => {
             'password': password
         }
         try {
-            const response = await fetch('http://192.168.9.200/ci_api/api/User/', {
+            const response = await fetch('http://192.168.0.115/ci_api/api/User/', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -32,9 +31,9 @@ const Insert = ({ navigation }) => {
     }
     return (
         <Container>
-            {/* <Header style={{ backgroundColor: '#000080' }} span>
+            <Header style={{ backgroundColor: '#000080' }} span>
                 <Left>
-                    <TouchableOpacity onPress={() => navigation.navigate('User')}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
                         <FontAwesome name="arrow-left" size={25} color="white" />
                     </TouchableOpacity>
                 </Left>
@@ -43,7 +42,7 @@ const Insert = ({ navigation }) => {
                         Insert a New User
                     </Title>
                 </Body>
-            </Header> */}
+            </Header>
             <Content>
                 <Form style={{ padding: 0 }}>
                     <Item stackedLabel style={{ marginTop: 10 }}>

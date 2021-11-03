@@ -20,7 +20,7 @@ const User = ({ navigation }) => {
     }, [])
     const getUser = async () => {
         try {
-            const response = await fetch('http://192.168.9.200/ci_api/api/User/', {
+            const response = await fetch('http://192.168.0.115/ci_api/api/User/', {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
@@ -37,7 +37,7 @@ const User = ({ navigation }) => {
     const deleteUser = async (id) => {
         console.log(id);
         try {
-            const response = await fetch('http://192.168.9.200/ci_api/api/Delete/', {
+            const response = await fetch('http://192.168.0.115/ci_api/api/Delete/', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

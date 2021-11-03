@@ -42,9 +42,9 @@ const Update = ({ navigation, route }) => {
     }
     return (
         <Container>
-            {/* <Header style={{ backgroundColor: '#000080' }} span>
+            <Header style={{ backgroundColor: '#000080' }} span>
                 <Left>
-                    <TouchableOpacity onPress={() => navigation.navigate('User')}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
                         <FontAwesome name="arrow-left" size={25} color="white" />
                     </TouchableOpacity>
                 </Left>
@@ -53,7 +53,7 @@ const Update = ({ navigation, route }) => {
                         Update User
                     </Title>
                 </Body>
-            </Header> */}
+            </Header>
             <Content>
                 <Form style={{ padding: 0 }}>
                     <Item stackedLabel style={{ marginTop: 10 }}>

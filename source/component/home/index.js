@@ -44,8 +44,9 @@ const Home = ({ navigation }) => {
                 <Grid>
                     <Col
                         style={{ height: 200, justifyContent: 'center', alignItems: 'center' }}>
-                        <TouchableOpacity style={{ justifyContent: 'center', alignItems: 'center' }}>
-                            <FontAwesome name="location-arrow" size={25} color='black' />
+                        <TouchableOpacity onPress={() => navigation.navigate('Patroli')}
+                            style={{ justifyContent: 'center', alignItems: 'center' }}>
+                            <FontAwesome name="shield-alt" size={25} color='black' />
                             <Text style={{ color: 'black', marginTop: 5 }}>Patroli</Text>
                         </TouchableOpacity>
                     </Col>
