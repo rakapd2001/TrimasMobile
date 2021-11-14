@@ -1,4 +1,4 @@
-import { Button, Container } from 'native-base'
+import { Button, Col, Container, Content, Grid } from 'native-base'
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import FontAwesome from 'react-native-vector-icons/FontAwesome5'
@@ -13,26 +13,36 @@ const Camera = ({ navigation }) => {
     }
     return (
         <Container>
-            <Button onPress={() => setIsActive(true)}>
-                <Text>Scan</Text>
-            </Button>
-            <Button danger onPress={() => setIsActive(false)}>
-                <Text>Cancel</Text>
-            </Button>
-            {
-                isActive == true ?
-                    <QRCodeScanner
-                        onRead={onScreen}
-                        topContent={
-                            <Text>
-                                Scan
-                            </Text>
-                        }
-                    />
-                    : <View>
-                        <Text>{valueQr}</Text>
-                    </View>
-            }
+            <Grid style={{ maxHeight: 30, margin: 0 }}>
+                <Col>
+                    <Button info onPress={() => setIsActive(true)} full>
+                        <Text style={{ color: 'white', fontWeight: '200' }}>Scan</Text>
+                    </Button>
+                </Col>
+                <Col>
+                    <Button success onPress={() => setIsActive(false)} full>
+                        <Text style={{ color: 'white', fontWeight: '200' }}>Cancel</Text>
+                    </Button>
+                </Col>
+            </Grid>
+            <View>
+                {
+                    isActive == true ?
+                        <View style={{ height: 500 }}>
+                            <QRCodeScanner
+                                onRead={onScreen}
+                                topContent={
+                                    <Text>
+                                        Scan
+                                    </Text>
+                                }
+                            />
+                        </View>
+                        : <View>
+                            <Text>{valueQr}</Text>
+                        </View>
+                }
+            </View>
         </Container>
     )
 }

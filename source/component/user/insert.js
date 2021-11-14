@@ -15,7 +15,7 @@ const Insert = ({ navigation }) => {
             'password': password
         }
         try {
-            const response = await fetch('http://192.168.0.115/ci_api/api/User/', {
+            const response = await fetch('http://192.168.0.112/ci_api/api/User/', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

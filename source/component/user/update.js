@@ -26,7 +26,7 @@ const Update = ({ navigation, route }) => {
         }
         console.log(data);
         try {
-            const response = await fetch('http://192.168.9.200/ci_api/api/User/', {
+            const response = await fetch('http://192.168.0.112/ci_api/api/User/', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

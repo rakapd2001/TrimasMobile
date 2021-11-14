@@ -1,15 +1,16 @@
 import { Body, Container, Header, Left, Tab, TabHeading, Tabs, Title } from 'native-base'
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 import FontAwesome from 'react-native-vector-icons/FontAwesome5'
 import Camera from './camera'
+import Results from './result'
 
-const Patroli = () => {
+const Patroli = ({ navigation }) => {
     return (
         <Container>
             <Header style={{ backgroundColor: '#000080' }} hasTabs>
                 <Left>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
                         <FontAwesome name="arrow-left" size={25} color="white" />
                     </TouchableOpacity>
                 </Left>
@@ -20,12 +21,14 @@ const Patroli = () => {
                 </Body>
             </Header>
             <Tabs>
-                <Tab heading={
-                    <TabHeading style={{ backgroundColor: '#000080' }}>
-                        <FontAwesome name="camera" size={15} color="white" style={{ marginRight: 5 }} />
-                        <Text>Camera</Text>
-                    </TabHeading>}>
+                <Tab heading={<TabHeading><FontAwesome name="camera" size={15} color="white" style={{ marginRight: 5 }} />
+                    <Text>Camera</Text>
+                </TabHeading>}>
+                    {/* content */}
                     <Camera />
+                </Tab>
+                <Tab heading={<TabHeading><FontAwesome name="list" size={15} color='white' style={{ marginRight: 5 }} /><Text>Results</Text></TabHeading>}>
+                    <Results />
                 </Tab>
             </Tabs>
         </Container>
@@ -34,4 +37,3 @@ const Patroli = () => {
 
 export default Patroli
 
-const styles = StyleSheet.create({})
